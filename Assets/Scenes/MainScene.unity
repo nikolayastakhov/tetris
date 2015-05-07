@@ -260,6 +260,7 @@ MonoBehaviour:
   - {fileID: 121782, guid: bf4496dc48a22425b83633a58a9171ff, type: 2}
   - {fileID: 151762, guid: 23d9c9bdd400148b49c4ace31204ab10, type: 2}
   - {fileID: 119222, guid: d21cc2fe190924656a5ad5ea475b065e, type: 2}
+  piece: {fileID: 0}
 --- !u!4 &941438241
 Transform:
   m_ObjectHideFlags: 0
