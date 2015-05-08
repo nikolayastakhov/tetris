@@ -35,3 +35,9 @@ function moveUp () {
 function rotate () {
   piece.transform.Rotate(0, 0, -90);
 }
+function Update (){
+	   if (Input.GetKeyDown(KeyCode.Escape))
+    {
+        Application.LoadLevel (2);
+    }
+}
