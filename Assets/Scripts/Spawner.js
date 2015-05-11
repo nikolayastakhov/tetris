@@ -8,10 +8,6 @@ function Start () {
   spawnNext();
 }
 
-function Update () {
-
-}
-
 function spawnNext () {
   var i : int = Random.Range(0, groups.Length);
   piece = Instantiate(groups[i], transform.position, Quaternion.identity);
