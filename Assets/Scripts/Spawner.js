@@ -3,12 +3,14 @@
 var groups : GameObject[];
 var piece : GameObject;
 
+
 function Start () {
-  // spawnNext();
+  spawnNext();
 }
 
 function spawnNext () {
   var i : int = Random.Range(0, groups.Length);
+<<<<<<< HEAD
   piece = new Instantiate(groups[i], Vector3(Random.Range(0,9)+0.5,Random.Range(0,19)+0.5,0), Quaternion.identity);
 }
 
@@ -40,4 +42,7 @@ function Update (){
     {
         Application.LoadLevel (2);
     }
+=======
+  piece = Instantiate(groups[i], transform.position, Quaternion.identity);
+>>>>>>> origin/develop
 }
