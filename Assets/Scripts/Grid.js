@@ -48,7 +48,7 @@ static function decreaseRowsAbove (y : int) {
 static function deleteRow (y : int) {
   for (var x : int = 0; x < w; x++) {
     Destroy(grid[x, y].gameObject);
-      grid[x, y] = null;
+    grid[x, y] = null;
   }
 }
 
