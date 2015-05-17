@@ -1,6 +1,7 @@
 #pragma strict
 
 var lastFall : float = 0;
+static var speed : float = 1;
 
 function Start () {
   if (!isValidGridPos()) {
@@ -22,7 +23,7 @@ function Update () {
     moveRight();
 
   // Перемещение вниз
-  } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Time.time - lastFall >= 1) {
+  } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Time.time - lastFall >= speed) {
 
     moveDown();
 
@@ -35,18 +36,27 @@ function Update () {
 
     fallDown();
 
+  } else if (Input.GetKeyDown(KeyCode.LeftShift)) {
+
+    speed -= 0.1;
+
+  } else if (Input.GetKeyDown(KeyCode.LeftControl)) {
+
+    if (speed < 1) {
+      speed += 0.1;
+    }
+
   }
 }
-// TODO: Починить ошибку при Y=20
+
 function isValidGridPos() : boolean {
   for (var child : Transform in transform) {
     var v : Vector2 = Grid.roundVec2(child.position);
-      // Debug.Log("V.X: " + v.x + " V.Y: " + v.y);
       if (!Grid.insideBorder(v))
         return false;
 
       if (Grid.grid[v.x, v.y] != null && Grid.grid[v.x, v.y].parent != transform) {
-        // Debug.Log("V.X: " + v.x + " V.Y: " + v.y);
+
         return false;
       }
   }
@@ -94,7 +104,7 @@ function moveDown () {
   if (isValidGridPos()) {
     updateGrid();
   } else {
-    // Опускаем
+    // Поднимаем обратно
     transform.position += new Vector3(0, 1, 0);
     // Чистим полные ряды
     Grid.deleteFullRows();
