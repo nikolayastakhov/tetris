@@ -4,6 +4,7 @@
 static var w : int = 10;
 static var h : int = 21; // Высота увеличена для отсутствия ошибок при проверке положения фигуры на старте
 static var grid : Transform[,] = new Transform[w, h];
+static var score : int = 0;
 
 // ####################### //
 // Вспомогательные функции //
@@ -54,13 +55,19 @@ static function deleteRow (y : int) {
 
 // Удаление всех полных рядов
 static function deleteFullRows () {
+  var counter : int = 0;
+  var points : int[] = [0, 40, 100, 300, 1200];
   for (var y : int = 0; y < h; y++) {
     if (isRowFull(y)) {
       deleteRow(y);
       decreaseRowsAbove(y+1);
       y--;
+      counter += 1;
     }
   }
+  score += points[counter];
+  Debug.Log(score);
+  counter = 0;
 }
 
 // Округление вектора поворота

@@ -38,12 +38,12 @@ function Update () {
 
   } else if (Input.GetKeyDown(KeyCode.LeftShift)) {
 
-    speed -= 0.1;
+    speed -= 0.2;
 
   } else if (Input.GetKeyDown(KeyCode.LeftControl)) {
 
     if (speed < 1) {
-      speed += 0.1;
+      speed += 0.2;
     }
 
   }
