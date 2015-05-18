@@ -4,7 +4,6 @@
 static var w : int = 10;
 static var h : int = 21; // Высота увеличена для отсутствия ошибок при проверке положения фигуры на старте
 static var grid : Transform[,] = new Transform[w, h];
-// static var score : int = 0;
 
 // ####################### //
 // Вспомогательные функции //

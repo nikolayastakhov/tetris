@@ -12,6 +12,8 @@ function Start () {
 
 function Update () {
 
+  setSpeed(Level.level);
+
   // Перемещение налево
   if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
 
@@ -35,16 +37,6 @@ function Update () {
   } else if (Input.GetKeyDown(KeyCode.Space)) {
 
     fallDown();
-
-  } else if (Input.GetKeyDown(KeyCode.LeftShift)) {
-
-    speed -= 0.2;
-
-  } else if (Input.GetKeyDown(KeyCode.LeftControl)) {
-
-    if (speed < 1) {
-      speed += 0.2;
-    }
 
   }
 }
@@ -136,4 +128,8 @@ function rotate () {
   } else {
     transform.Rotate(0, 0, 90);
   }
+}
+
+function setSpeed(lvl : int) {
+  speed = 1.1 - (0.1 * lvl);
 }
