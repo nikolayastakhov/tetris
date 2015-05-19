@@ -10,7 +10,7 @@ function Start () {
 
 function spawnNext () {
   var i : int = Random.Range(0, groups.Length);
-<<<<<<< HEAD
+//<<<<<<< HEAD
   piece = new Instantiate(groups[i], Vector3(Random.Range(0,9)+0.5,Random.Range(0,19)+0.5,0), Quaternion.identity);
 }
 
@@ -38,11 +38,12 @@ function rotate () {
   piece.transform.Rotate(0, 0, -90);
 }
 function Update (){
+	var i : int = Random.Range(0, groups.Length);
 	   if (Input.GetKeyDown(KeyCode.Escape))
     {
         Application.LoadLevel (2);
     }
-=======
+//=======
   piece = Instantiate(groups[i], transform.position, Quaternion.identity);
->>>>>>> origin/develop
+//>>>>>>> origin/develop
 }
