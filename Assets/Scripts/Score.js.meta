@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Score.js.meta
 guid: ab5dbdd38fd0d074596147ca241af3d6
 timeCreated: 1431114238
+=======
+guid: 59b9504b9037444c881c3fb54fc2236b
+timeCreated: 1431899804
+>>>>>>> origin/develop:Assets/Scripts/Score.js.meta
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
