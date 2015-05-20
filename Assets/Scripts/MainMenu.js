@@ -2,7 +2,7 @@
 import UnityEngine.UI;
 public var StartMenu : Canvas;
 public var QuitMenu : Canvas;
-public var PauseMenu : Canvas;
+public var ScoreMenu : Canvas;
 public var StartB : Button;
 public var CloseB : Button;
 
@@ -12,15 +12,23 @@ function Start () {
     CloseB = GetComponent.<Button> ();
     StartMenu.enabled = true;
     QuitMenu.enabled = false;
+    ScoreMenu.enabled = false;
 }
 function ExitPress (){
     StartMenu.enabled = false;
     QuitMenu.enabled = true;
+    ScoreMenu.enabled = false;
 }
 
+function ScorePress (){
+    QuitMenu.enabled = false;
+    StartMenu.enabled = false;
+    ScoreMenu.enabled = true;
+}
 function NoPress (){
     QuitMenu.enabled = false;
     StartMenu.enabled = true;
+    ScoreMenu.enabled = false;
 }
 
 public function ExitGame (){
