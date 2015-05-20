@@ -6,7 +6,7 @@ static var speed : float = 1;
 function Start () {
   if (!isValidGridPos()) {
     Debug.Log("GAME OVER");
-    Destroy(gameObject);
+    Application.LoadLevel(2);
   }
 }
 
