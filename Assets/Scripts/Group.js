@@ -1,11 +1,17 @@
 #pragma strict
 
-var lastFall : float = 0;
 static var speed : float = 1;
+static var pauseTime : float;
+static var paused : boolean;
+
+var lastFall : float = 0;
+
+function Awake () {
+  paused = false;
+}
 
 function Start () {
   if (!isValidGridPos()) {
-    Debug.Log("GAME OVER");
     Application.LoadLevel(2);
   }
 }
@@ -14,30 +20,40 @@ function Update () {
 
   setSpeed(Level.level);
 
-  // Перемещение налево
-  if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
+  if (!paused) {
 
-    moveLeft();
+      // Перемещение налево
+      if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
 
-  // Перемещение направо
-  } else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
+        moveLeft();
 
-    moveRight();
+      // Перемещение направо
+      } else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
 
-  // Перемещение вниз
-  } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Time.time - lastFall >= speed) {
+        moveRight();
 
-    moveDown();
+      // Перемещение вниз
+      } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Time.time - lastFall >= speed) {
 
-  // Поворот
-  } else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) {
+        moveDown();
 
-    rotate();
+      // Поворот
+      } else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) {
 
-  } else if (Input.GetKeyDown(KeyCode.Space)) {
+        rotate();
 
-    fallDown();
+      } else if (Input.GetKeyDown(KeyCode.Space)) {
 
+        fallDown();
+      }
+  }
+
+  if (Input.GetKeyDown(KeyCode.Escape)) {
+    if (!paused) {
+      pause();
+    } else {
+      resume();
+    }
   }
 }
 
@@ -130,6 +146,29 @@ function rotate () {
   }
 }
 
-function setSpeed(lvl : int) {
+function setSpeed (lvl : int) {
   speed = 1.1 - (0.1 * lvl);
 }
+
+static function pause () {
+    pauseTime = Time.timeScale;
+    Time.timeScale = 0;
+    paused = true;
+    Pause.pause();
+}
+
+static function resume () {
+  Time.timeScale = pauseTime;
+  paused = false;
+  Pause.resume();
+}
+
+
+
+
+
+
+
+
+
+

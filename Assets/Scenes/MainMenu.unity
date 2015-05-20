@@ -239,7 +239,7 @@ RectTransform:
   - {fileID: 807946438}
   - {fileID: 541649877}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 4.5, y: 9.5}
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 6
 --- !u!223 &129580304
 Canvas:
   m_ObjectHideFlags: 0
@@ -507,7 +507,7 @@ RectTransform:
   - {fileID: 1415541693}
   - {fileID: 93367662}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 4.5, y: 9.5}
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 6
 --- !u!223 &443814769
 Canvas:
   m_ObjectHideFlags: 0
@@ -614,7 +614,7 @@ RectTransform:
   - {fileID: 1046501945}
   - {fileID: 206719444}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 4.5, y: 9.5}
@@ -943,7 +943,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!1 &1046501944
 GameObject:
   m_ObjectHideFlags: 0

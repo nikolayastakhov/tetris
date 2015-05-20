@@ -1,11 +1,13 @@
 ﻿#pragma strict
 
+import UnityEngine.UI;
+
 static var score : int;
-var scoreText : UnityEngine.UI.Text;
+var scoreText : Text;
 var scoreSpaces : Array = ["     ", "    ", "   ", "  ", " "];
 
 function Awake () {
-  scoreText = GetComponent.<UnityEngine.UI.Text>();
+  scoreText = GetComponent.<Text>();
 }
 
 function Update () {
