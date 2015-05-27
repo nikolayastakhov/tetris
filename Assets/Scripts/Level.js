@@ -7,7 +7,6 @@ var levelSpaces : Array = ["     ", "    ", "   ", "  ", " "];
 
 function Awake () {
   levelText = GetComponent.<UnityEngine.UI.Text>();
-  Group.speed = 1;
   level = 1;
 }
 

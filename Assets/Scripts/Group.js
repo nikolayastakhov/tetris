@@ -4,8 +4,8 @@ static var speed : float = 1;
 static var pauseTime : float;
 static var paused : boolean;
 
+var speedSaved : float;
 var lastFall : float = 0;
-var lastPress : float = 0;
 
 function Awake () {
   paused = false;
@@ -19,35 +19,20 @@ function Start () {
 
 function Update () {
 
-  setSpeed(Level.level);
+
 
   if (!paused) {
-
-      // Перемещение налево
-      if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
-
-        moveLeft();
-
-      // Перемещение направо
-      } else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
-
-        moveRight();
-
-      // Перемещение вниз
-      } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Time.time - lastFall >= speed) {
-
-        moveDown();
-
-      // Поворот
-      } else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) {
-
-        rotate();
-
-      } else if (Input.GetKeyDown(KeyCode.Space)) {
-
-        fallDown();
-
-      }
+    if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
+      moveLeft();
+    } else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
+      moveRight();
+    } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Time.time - lastFall >= speed) {
+      moveDown();
+    } else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) {
+      rotate();
+    } else if (Input.GetKeyDown(KeyCode.Space)) {
+      fallDown();
+    }
   }
 
   if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -57,6 +42,16 @@ function Update () {
       resume();
     }
   }
+
+  // if (Input.GetKeyDown(KeyCode.LeftShift)) {
+  //   speedSaved = speed;
+  //   speed = 0.3;
+  // }
+
+  // if (Input.GetKeyUp(KeyCode.LeftShift)) {
+  //   speed = speedSaved;
+  // }
+
 }
 
 // Вспомогательная функция для проверки валидности положения фигуры после перемещения
@@ -149,7 +144,7 @@ function rotate () {
   }
 }
 
-function setSpeed (lvl : int) {
+static function setSpeed (lvl : int) {
   speed = 1.1 - (0.1 * lvl);
 }
 

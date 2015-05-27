@@ -37,5 +37,7 @@ public function ExitGame () {
 }
 
 public function StartLevel () {
+  Score.score = 0;
+  Level.level = 1;
   Application.LoadLevel(1); //this will load our first level from our build settings. "1" is the second scene in our game
 }

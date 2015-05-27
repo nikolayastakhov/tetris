@@ -61,6 +61,7 @@ static function deleteRow (y : int) {
     rowCount = 0;
     Level.level += 1;
   }
+  Group.setSpeed(Level.level);
 }
 
 // Удаление всех полных рядов
