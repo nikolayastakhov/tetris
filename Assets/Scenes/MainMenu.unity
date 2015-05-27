@@ -524,11 +524,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3e5657861864e49881088a9d10f6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartMenu: {fileID: 413311432}
-  QuitMenu: {fileID: 129580304}
-  ScoreMenu: {fileID: 443814769}
-  StartB: {fileID: 1822918597}
-  CloseB: {fileID: 93367663}
+  startMenu: {fileID: 413311432}
+  quitMenu: {fileID: 129580304}
+  scoreMenu: {fileID: 443814769}
+  startB: {fileID: 1822918597}
+  closeB: {fileID: 93367663}
 --- !u!1 &443814766
 GameObject:
   m_ObjectHideFlags: 0

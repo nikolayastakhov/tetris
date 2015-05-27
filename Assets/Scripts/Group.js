@@ -59,6 +59,7 @@ function Update () {
   }
 }
 
+// Вспомогательная функция для проверки валидности положения фигуры после перемещения
 function isValidGridPos() : boolean {
   for (var child : Transform in transform) {
     var v : Vector2 = Grid.roundVec2(child.position);
