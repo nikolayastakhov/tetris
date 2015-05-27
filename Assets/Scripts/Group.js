@@ -5,6 +5,7 @@ static var pauseTime : float;
 static var paused : boolean;
 
 var lastFall : float = 0;
+var lastPress : float = 0;
 
 function Awake () {
   paused = false;
@@ -45,6 +46,7 @@ function Update () {
       } else if (Input.GetKeyDown(KeyCode.Space)) {
 
         fallDown();
+
       }
   }
 
@@ -162,13 +164,3 @@ static function resume () {
   paused = false;
   Pause.resume();
 }
-
-
-
-
-
-
-
-
-
-

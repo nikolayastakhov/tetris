@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 import UnityEngine.UI;
 
@@ -9,7 +9,6 @@ var scoreSpaces : Array = ["     ", "    ", "   ", "  ", " "];
 function Awake () {
   scoreText = GetComponent.<Text>();
 }
-
 
 function Update () {
   scoreText.text = scoreSpaces[score.ToString().Length - 1] + score.ToString();

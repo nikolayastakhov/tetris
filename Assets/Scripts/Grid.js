@@ -4,6 +4,12 @@
 static var w : int = 10;
 static var h : int = 21; // Высота увеличена для отсутствия ошибок при проверке положения фигуры на старте
 static var grid : Transform[,] = new Transform[w, h];
+static var rowCount : int;
+
+
+function Awake () {
+  rowCount = 0;
+}
 
 // ####################### //
 // Вспомогательные функции //
@@ -50,6 +56,11 @@ static function deleteRow (y : int) {
     Destroy(grid[x, y].gameObject);
     grid[x, y] = null;
   }
+  rowCount += 1;
+  if (rowCount == 10) {
+    rowCount = 0;
+    Level.level += 1;
+  }
 }
 
 // Удаление всех полных рядов
@@ -64,7 +75,7 @@ static function deleteFullRows () {
       counter += 1;
     }
   }
-  Score.score += points[counter];
+  Score.score += points[counter] * Level.level;
   counter = 0;
 }
 
