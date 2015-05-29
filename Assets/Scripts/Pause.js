@@ -22,6 +22,7 @@ static function resume () {
 
 function goToMain () {
   Application.LoadLevel (0);
+  Group.resume();
 }
 
 function continueGame () {
