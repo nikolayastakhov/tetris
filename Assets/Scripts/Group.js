@@ -43,15 +43,6 @@ function Update () {
     }
   }
 
-  // if (Input.GetKeyDown(KeyCode.LeftShift)) {
-  //   speedSaved = speed;
-  //   speed = 0.3;
-  // }
-
-  // if (Input.GetKeyUp(KeyCode.LeftShift)) {
-  //   speed = speedSaved;
-  // }
-
 }
 
 // Вспомогательная функция для проверки валидности положения фигуры после перемещения
