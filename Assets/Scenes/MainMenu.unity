@@ -954,6 +954,7 @@ GameObject:
   - 124: {fileID: 888495730}
   - 81: {fileID: 888495729}
   - 82: {fileID: 888495733}
+  - 114: {fileID: 888495734}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1095,6 +1096,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &888495734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888495727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41494fcb97c67490084dc78b68d9b257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1046501944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1290,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 10}
-  m_SizeDelta: {x: 104, y: 31}
+  m_SizeDelta: {x: 130, y: 31}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1415541694
 MonoBehaviour:
@@ -1358,7 +1370,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Score
+  m_Text: SCORES
 --- !u!222 &1415541696
 CanvasRenderer:
   m_ObjectHideFlags: 0
